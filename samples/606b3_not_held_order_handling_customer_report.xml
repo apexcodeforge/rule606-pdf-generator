@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+This sample file was created for testing the Rule 606 Report Generator.
+-->
+<notHeldOrderHandlingCustomerReport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="oh-20191231.xsd">
+  <version>1.2</version>
+  <customer>J. Customer</customer>
+  <bd>B. Roker</bd>
+  <timestamp>2020-04-01T22:55:48Z</timestamp>
+  <startDate>2020-01-01</startDate>
+  <endDate>2020-06-30</endDate>
+  <hDirected>
+    <hMonthly>
+      <year>2020</year>
+      <mon>1</mon>
+      <sentShr>50000</sentShr>
+      <executedAsPrincipalShr>10000</executedAsPrincipalShr>
+      <ioiExposedOrd>25</ioiExposedOrd>
+      <ioiExposedVenueList>
+        <ioiExposedVenue>
+          <venueName>Goldman Sachs</venueName>
+          <mic>GSCO</mic>
+        </ioiExposedVenue>
+        <ioiExposedVenue>
+          <venueName>Morgan Stanley</venueName>
+          <mic>MSCO</mic>
+        </ioiExposedVenue>
+      </ioiExposedVenueList>
+      <routingVenueList>
+        <iVenue>
+          <venueName>New York Stock Exchange</venueName>
+          <services>PRV</services>
+          <mic>XNYS</mic>
+          <routedShr>20000</routedShr>
+          <iocRoutedShr>5000</iocRoutedShr>
+          <furtherRoutableShr>3000</furtherRoutableShr>
+          <orderSizeShr>500</orderSizeShr>
+          <executedShr>18000</executedShr>
+          <filledPct>90.00</filledPct>
+          <fillSizeShr>450</fillSizeShr>
+          <netFeeOrRebateCph>-0.0030</netFeeOrRebateCph>
+          <midpointShr>5000</midpointShr>
+          <midpointPct>27.78</midpointPct>
+          <nearsideShr>8000</nearsideShr>
+          <nearsidePct>44.44</nearsidePct>
+          <farsideShr>5000</farsideShr>
+          <farsidePct>27.78</farsidePct>
+          <providedLiqudityShr>12000</providedLiqudityShr>
+          <providedLiquidityPct>66.67</providedLiquidityPct>
+          <orderDurationMsec>1500</orderDurationMsec>
+          <providedLiquidityNetCph>0.0025</providedLiquidityNetCph>
+          <removedLiquidityShr>6000</removedLiquidityShr>
+          <removedLiquidityPct>33.33</removedLiquidityPct>
+          <removedLiquidityNetCph>-0.0030</removedLiquidityNetCph>
+        </iVenue>
+        <iVenue>
+          <venueName>BATS Exchange</venueName>
+          <services>EV/SRV</services>
+          <mic>BATS</mic>
+          <routedShr>15000</routedShr>
+          <iocRoutedShr>3000</iocRoutedShr>
+          <furtherRoutableShr>2000</furtherRoutableShr>
+          <orderSizeShr>300</orderSizeShr>
+          <executedShr>12000</executedShr>
+          <filledPct>80.00</filledPct>
+          <fillSizeShr>240</fillSizeShr>
+          <netFeeOrRebateCph>0.0020</netFeeOrRebateCph>
+          <midpointShr>4000</midpointShr>
+          <midpointPct>33.33</midpointPct>
+          <nearsideShr>5000</nearsideShr>
+          <nearsidePct>41.67</nearsidePct>
+          <farsideShr>3000</farsideShr>
+          <farsidePct>25.00</farsidePct>
+          <providedLiqudityShr>8000</providedLiqudityShr>
+          <providedLiquidityPct>66.67</providedLiquidityPct>
+          <orderDurationMsec>2000</orderDurationMsec>
+          <providedLiquidityNetCph>0.0030</providedLiquidityNetCph>
+          <removedLiquidityShr>4000</removedLiquidityShr>
+          <removedLiquidityPct>33.33</removedLiquidityPct>
+          <removedLiquidityNetCph>-0.0025</removedLiquidityNetCph>
+        </iVenue>
+      </routingVenueList>
+    </hMonthly>
+  </hDirected>
+  <hNondirected>
+    <hMonthly>
+      <year>2020</year>
+      <mon>1</mon>
+      <sentShr>100000</sentShr>
+      <executedAsPrincipalShr>20000</executedAsPrincipalShr>
+      <ioiExposedOrd>50</ioiExposedOrd>
+      <ioiExposedVenueList>
+        <ioiExposedVenue>
+          <venueName>JP Morgan</venueName>
+          <mic>JPMS</mic>
+        </ioiExposedVenue>
+      </ioiExposedVenueList>
+      <routingVenueList>
+        <iVenue>
+          <venueName>NYSE Arca</venueName>
+          <services>PRV</services>
+          <mic>ARCA</mic>
+          <routedShr>40000</routedShr>
+          <iocRoutedShr>10000</iocRoutedShr>
+          <furtherRoutableShr>5000</furtherRoutableShr>
+          <orderSizeShr>800</orderSizeShr>
+          <executedShr>35000</executedShr>
+          <filledPct>87.50</filledPct>
+          <fillSizeShr>700</fillSizeShr>
+          <netFeeOrRebateCph>-0.0020</netFeeOrRebateCph>
+          <midpointShr>10000</midpointShr>
+          <midpointPct>28.57</midpointPct>
+          <nearsideShr>15000</nearsideShr>
+          <nearsidePct>42.86</nearsidePct>
+          <farsideShr>10000</farsideShr>
+          <farsidePct>28.57</farsidePct>
+          <providedLiqudityShr>25000</providedLiqudityShr>
+          <providedLiquidityPct>71.43</providedLiquidityPct>
+          <orderDurationMsec>1200</orderDurationMsec>
+          <providedLiquidityNetCph>0.0028</providedLiquidityNetCph>
+          <removedLiquidityShr>10000</removedLiquidityShr>
+          <removedLiquidityPct>28.57</removedLiquidityPct>
+          <removedLiquidityNetCph>-0.0028</removedLiquidityNetCph>
+        </iVenue>
+      </routingVenueList>
+    </hMonthly>
+    <hMonthly>
+      <year>2020</year>
+      <mon>2</mon>
+      <sentShr>80000</sentShr>
+      <executedAsPrincipalShr>15000</executedAsPrincipalShr>
+      <ioiExposedOrd>30</ioiExposedOrd>
+      <ioiExposedVenueList/>
+      <routingVenueList>
+        <iVenue>
+          <venueName>The Nasdaq Stock Market</venueName>
+          <services>PRV</services>
+          <mic>XNAS</mic>
+          <routedShr>30000</routedShr>
+          <iocRoutedShr>8000</iocRoutedShr>
+          <furtherRoutableShr>4000</furtherRoutableShr>
+          <orderSizeShr>600</orderSizeShr>
+          <executedShr>25000</executedShr>
+          <filledPct>83.33</filledPct>
+          <fillSizeShr>500</fillSizeShr>
+          <netFeeOrRebateCph>-0.0015</netFeeOrRebateCph>
+          <midpointShr>8000</midpointShr>
+          <midpointPct>32.00</midpointPct>
+          <nearsideShr>10000</nearsideShr>
+          <nearsidePct>40.00</nearsidePct>
+          <farsideShr>7000</farsideShr>
+          <farsidePct>28.00</farsidePct>
+          <providedLiqudityShr>18000</providedLiqudityShr>
+          <providedLiquidityPct>72.00</providedLiquidityPct>
+          <orderDurationMsec>1800</orderDurationMsec>
+          <providedLiquidityNetCph>0.0032</providedLiquidityNetCph>
+          <removedLiquidityShr>7000</removedLiquidityShr>
+          <removedLiquidityPct>28.00</removedLiquidityPct>
+          <removedLiquidityNetCph>-0.0022</removedLiquidityNetCph>
+        </iVenue>
+      </routingVenueList>
+    </hMonthly>
+  </hNondirected>
+</notHeldOrderHandlingCustomerReport>

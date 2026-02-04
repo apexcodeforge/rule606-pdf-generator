@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+This sample file was created for testing the Rule 606 Report Generator.
+-->
+<heldExemptNotHeldOrderRoutingCustomerReport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="oh-20191231.xsd">
+  <version>1.2</version>
+  <customer>J. Customer</customer>
+  <bd>B. Roker</bd>
+  <timestamp>2020-04-01T22:55:48Z</timestamp>
+  <startDate>2020-01-01</startDate>
+  <endDate>2020-06-30</endDate>
+  <held>
+    <order>
+      <orderId>ORD-001</orderId>
+      <directed>N</directed>
+      <route>
+        <venueName>New York Stock Exchange</venueName>
+        <mic>XNYS</mic>
+        <transaction>
+          <date>2020-01-15</date>
+          <time>14:30:00</time>
+        </transaction>
+        <transaction>
+          <date>2020-01-15</date>
+          <time>14:31:05</time>
+        </transaction>
+      </route>
+      <route>
+        <venueName>BATS Exchange</venueName>
+        <mic>BATS</mic>
+        <transaction>
+          <date>2020-01-15</date>
+          <time>14:32:10</time>
+        </transaction>
+      </route>
+    </order>
+    <order>
+      <orderId>ORD-002</orderId>
+      <directed>Y</directed>
+      <route>
+        <venueName>NYSE Arca</venueName>
+        <mic>ARCA</mic>
+        <transaction>
+          <date>2020-02-10</date>
+          <time>09:45:30</time>
+        </transaction>
+      </route>
+    </order>
+    <order>
+      <orderId>ORD-003</orderId>
+      <directed>N</directed>
+      <route>
+        <venueName>The Nasdaq Stock Market</venueName>
+        <mic>XNAS</mic>
+      </route>
+    </order>
+    <order>
+      <orderId>ORD-004</orderId>
+      <directed>N</directed>
+    </order>
+    <order>
+      <orderId>ORD-005</orderId>
+      <directed>Y</directed>
+      <route>
+        <venueName>EDGX Exchange</venueName>
+        <mic>EDGX</mic>
+        <transaction>
+          <date>2020-03-20</date>
+          <time>10:00:00</time>
+        </transaction>
+        <transaction>
+          <date>2020-03-20</date>
+          <time>10:00:15</time>
+        </transaction>
+        <transaction>
+          <date>2020-03-20</date>
+          <time>10:00:30</time>
+        </transaction>
+      </route>
+    </order>
+  </held>
+  <notHeldExempt>
+    <order>
+      <orderId>NHE-001</orderId>
+      <directed>N</directed>
+      <route>
+        <venueName>Citadel Securities</venueName>
+        <mpid>CDRG</mpid>
+        <transaction>
+          <date>2020-04-05</date>
+          <time>11:15:00</time>
+        </transaction>
+      </route>
+    </order>
+    <order>
+      <orderId>NHE-002</orderId>
+      <directed>Y</directed>
+      <route>
+        <venueName>Virtu Americas</venueName>
+        <mpid>NITE</mpid>
+        <transaction>
+          <date>2020-05-12</date>
+          <time>13:20:45</time>
+        </transaction>
+      </route>
+    </order>
+  </notHeldExempt>
+  <options>
+    <order>
+      <orderId>OPT-001</orderId>
+      <directed>N</directed>
+      <route>
+        <venueName>CBOE Exchange</venueName>
+        <mic>XCBO</mic>
+        <transaction>
+          <date>2020-01-20</date>
+          <time>15:00:00</time>
+        </transaction>
+      </route>
+    </order>
+  </options>
+</heldExemptNotHeldOrderRoutingCustomerReport>
