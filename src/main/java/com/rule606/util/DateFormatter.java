@@ -1,16 +1,34 @@
 package com.rule606.util;
 
+import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
+import java.util.Locale;
 
 public class DateFormatter {
+
+    // Target timezone: Eastern Time (handles both EDT and EST automatically)
+    private static final ZoneId EASTERN = ZoneId.of("America/New_York");
+
+    // Format: "Wed Apr 01 2020 18:55:48 GMT-0400 (Eastern Daylight Time)"
+    private static final DateTimeFormatter JS_DATE_FORMAT = DateTimeFormatter.ofPattern(
+            "EEE MMM dd yyyy HH:mm:ss 'GMT'XX", Locale.US);
 
     public static String formatTimestamp(String isoTimestamp) {
         if (isoTimestamp == null || isoTimestamp.isEmpty()) return "";
         try {
             ZonedDateTime zdt = ZonedDateTime.parse(isoTimestamp);
-            return zdt.format(DateTimeFormatter.RFC_1123_DATE_TIME);
+            // Convert to Eastern time
+            ZonedDateTime eastern = zdt.withZoneSameInstant(EASTERN);
+            String formatted = eastern.format(JS_DATE_FORMAT);
+            // Add timezone name in parentheses
+            String tzName = eastern.getZone().getDisplayName(
+                    java.time.format.TextStyle.FULL, Locale.US);
+            // Use the specific daylight/standard name
+            boolean isDst = eastern.getZone().getRules().isDaylightSavings(eastern.toInstant());
+            String tzDisplayName = isDst ? "Eastern Daylight Time" : "Eastern Standard Time";
+            return formatted + " (" + tzDisplayName + ")";
         } catch (DateTimeParseException e) {
             return isoTimestamp;
         }

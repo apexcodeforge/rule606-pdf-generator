@@ -100,7 +100,7 @@ public class A1PdfGenerator {
 
         // Summary table
         if (!section.isEmpty()) {
-            renderer.addVerticalSpace(3);
+            renderer.addVerticalSpace(5);
             renderer.drawLeftText("Summary", PdfStyles.A1_SUB_SECTION_HEADER_SIZE, true);
 
             float[] summaryWidths = {60, 60, 60, 60, 60};
@@ -121,7 +121,7 @@ public class A1PdfGenerator {
         // Venue table
         List<Venue> venues = section.getVenues();
         if (!venues.isEmpty()) {
-            renderer.addVerticalSpace(3);
+            renderer.addVerticalSpace(10);
             renderer.drawLeftText("Venues", PdfStyles.A1_SUB_SECTION_HEADER_SIZE, true);
 
             float[] venueWidths = new float[14];
@@ -155,10 +155,10 @@ public class A1PdfGenerator {
                 .filter(v -> v.getMaterialAspects() != null && !v.getMaterialAspects().isEmpty())
                 .toList();
         if (!venuesWithMa.isEmpty()) {
-            renderer.addVerticalSpace(3);
+            renderer.addVerticalSpace(12);
             renderer.drawLeftText("Material Aspects:", PdfStyles.A1_SUB_SECTION_HEADER_SIZE, true);
             for (Venue v : venuesWithMa) {
-                renderer.drawBulletedItem(v.getName() + ":", v.getMaterialAspects(), PdfStyles.A1_TEXT_SIZE);
+                renderer.drawMaterialAspectItem(v.getName() + ":", v.getMaterialAspects(), PdfStyles.A1_TEXT_SIZE);
             }
         }
     }

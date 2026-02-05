@@ -92,7 +92,7 @@ Generate B1 reports (outputs multiple files for each section):
 ```bash
 java -jar target/rule606-generator-1.0.0.jar \
   --xsd oh-20191231.xsd \
-  --xml samples/606b1_held_exempt_not_held_order_routing_customer_report.xml \
+  --xml samples/606b1_held_exempt_not_held_customer_routing.xml \
   --output b1_report.pdf
 # Outputs: b1_report_section_1.pdf, b1_report_section_2.pdf, b1_report_section_3.pdf
 ```
@@ -101,7 +101,7 @@ Generate a B3 report:
 ```bash
 java -jar target/rule606-generator-1.0.0.jar \
   --xsd oh-20191231.xsd \
-  --xml samples/606b3_not_held_order_handling_customer_report.xml \
+  --xml samples/606b3_not_held_customer_handling.xml \
   --output b3_report.pdf
 ```
 

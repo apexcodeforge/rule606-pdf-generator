@@ -461,6 +461,33 @@ public class PdfTableRenderer {
         currentY -= fontSize; // Extra spacing after item
     }
 
+    // Material aspects for A1 report - venue name not bold, description not indented
+    public void drawMaterialAspectItem(String venueName, String description, float fontSize) throws IOException {
+        float availWidth = contentWidth;
+
+        // Venue name line (not bold)
+        ensureSpace(fontSize * 2 + 4);
+        contentStream.beginText();
+        contentStream.setFont(HELVETICA, fontSize);
+        contentStream.newLineAtOffset(margin, currentY - fontSize);
+        contentStream.showText(sanitize(venueName));
+        contentStream.endText();
+        currentY -= fontSize * PdfStyles.LINE_HEIGHT;
+
+        // Description text with wrapping (not indented - same margin)
+        List<String> lines = wrapText(description, HELVETICA, fontSize, availWidth);
+        for (String line : lines) {
+            ensureSpace(fontSize + 2);
+            contentStream.beginText();
+            contentStream.setFont(HELVETICA, fontSize);
+            contentStream.newLineAtOffset(margin, currentY - fontSize);
+            contentStream.showText(sanitize(line));
+            contentStream.endText();
+            currentY -= fontSize * PdfStyles.LINE_HEIGHT;
+        }
+        currentY -= fontSize * 0.5f; // Small spacing after each item
+    }
+
     // --- Utilities ---
 
     public static List<String> wrapText(String text, PDFont font, float fontSize, float maxWidth) {
