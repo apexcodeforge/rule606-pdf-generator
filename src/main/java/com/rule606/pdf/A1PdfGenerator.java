@@ -75,7 +75,10 @@ public class A1PdfGenerator {
 
                 for (int s = 0; s < 3; s++) {
                     OrderRoutingSection section = monthly.getSectionByIndex(s);
-                    if (section == null) continue;
+                    // Always draw all three sections, even if null/empty
+                    if (section == null) {
+                        section = new OrderRoutingSection(); // empty section
+                    }
 
                     drawA1Section(renderer, monthName, year, SECTION_HEADERS[s], section);
 
@@ -98,25 +101,22 @@ public class A1PdfGenerator {
         renderer.addVerticalSpace(3);
         renderer.drawLeftText(sectionHeader, 10, true);
 
-        // Summary table
-        if (!section.isEmpty()) {
-            renderer.addVerticalSpace(5);
-            renderer.drawLeftText("Summary", PdfStyles.A1_SUB_SECTION_HEADER_SIZE, true);
+        // Summary table - always shown, even for empty sections
+        renderer.addVerticalSpace(5);
+        renderer.drawLeftText("Summary", PdfStyles.A1_SUB_SECTION_HEADER_SIZE, true);
 
-            float[] summaryWidths = {60, 60, 60, 60, 60};
-            String[][] summaryData = new String[2][5];
-            summaryData[0] = SUMMARY_HEADERS;
+        float[] summaryWidths = {60, 60, 60, 60, 60};
+        String[][] summaryData = new String[2][5];
+        summaryData[0] = SUMMARY_HEADERS;
 
-            boolean empty = section.isEmpty();
-            for (int i = 0; i < SUMMARY_TAGS.length; i++) {
-                String val = section.getSummaryValueByTag(SUMMARY_TAGS[i]);
-                summaryData[1][i] = (empty || val == null || val.isEmpty()) ? "-" : NumberFormatter.addCommas(val);
-            }
-
-            PdfTableRenderer.CellStyle[] hStyles = createHeaderStyles(5);
-            PdfTableRenderer.CellStyle[] dStyles = createValueStyles(5, "right");
-            renderer.drawTable(summaryData, summaryWidths, hStyles, dStyles, 1);
+        for (int i = 0; i < SUMMARY_TAGS.length; i++) {
+            String val = section.getSummaryValueByTag(SUMMARY_TAGS[i]);
+            summaryData[1][i] = (val == null || val.isEmpty()) ? "-" : NumberFormatter.addCommas(val);
         }
+
+        PdfTableRenderer.CellStyle[] hStyles = createHeaderStyles(5);
+        PdfTableRenderer.CellStyle[] dStyles = createValueStyles(5, "right");
+        renderer.drawTable(summaryData, summaryWidths, hStyles, dStyles, 1);
 
         // Venue table
         List<Venue> venues = section.getVenues();
