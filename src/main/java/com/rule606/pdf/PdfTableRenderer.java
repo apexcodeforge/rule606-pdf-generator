@@ -220,6 +220,15 @@ public class PdfTableRenderer {
         return drawTableResolved(data, resolved, headerStyles, dataStyles, headerRows, null);
     }
 
+    /**
+     * Draw a table with fixed column widths (no auto-expanding).
+     * Table is left-aligned at margin.
+     */
+    public float drawTableFixedWidth(String[][] data, float[] columnWidths, CellStyle[] headerStyles,
+                                      CellStyle[] dataStyles, int headerRows) throws IOException {
+        return drawTableResolved(data, columnWidths, headerStyles, dataStyles, headerRows, null);
+    }
+
     public float drawTableResolved(String[][] data, float[] colWidths, CellStyle[] headerStyles,
                                    CellStyle[] dataStyles, int headerRows,
                                    boolean[][] borders) throws IOException {

@@ -142,12 +142,13 @@ public class B3PdfGenerator {
             for (int i = 0; i < ioiVenues.size(); i++) {
                 ioiData[i + 1] = new String[]{ioiVenues.get(i)};
             }
-            float[] ioiWidths = {-1}; // auto
+            // Fixed width - not stretched to full page
+            float[] ioiWidths = {PdfStyles.B3_IOI_VENUE_COL_WIDTH};
             PdfTableRenderer.CellStyle[] ioiHStyles = {createStyle(
                     PdfStyles.B3_TABLE_HEADER_SIZE, true, PdfStyles.FILL_COLOR, "center")};
             PdfTableRenderer.CellStyle[] ioiDStyles = {createStyle(
                     PdfStyles.B3_TABLE_NAME_VALUE_SIZE, false, null, "left")};
-            renderer.drawTable(ioiData, ioiWidths, ioiHStyles, ioiDStyles, 1);
+            renderer.drawTableFixedWidth(ioiData, ioiWidths, ioiHStyles, ioiDStyles, 1);
         }
 
         // Detail table
@@ -199,14 +200,15 @@ public class B3PdfGenerator {
             summaryData[1][i] = (val == null || val.isEmpty()) ? "\u200B" : NumberFormatter.addCommas(val);
         }
 
-        float[] summaryWidths = {-1, -1, -1}; // auto
+        // Fixed widths - not stretched to full page
+        float[] summaryWidths = {PdfStyles.B3_SUMMARY_COL_WIDTH, PdfStyles.B3_SUMMARY_COL_WIDTH, PdfStyles.B3_SUMMARY_COL_WIDTH};
         PdfTableRenderer.CellStyle[] shStyles = new PdfTableRenderer.CellStyle[3];
         PdfTableRenderer.CellStyle[] sdStyles = new PdfTableRenderer.CellStyle[3];
         for (int i = 0; i < 3; i++) {
             shStyles[i] = createStyle(PdfStyles.B3_TABLE_HEADER_SIZE, true, PdfStyles.FILL_COLOR, "center");
             sdStyles[i] = createStyle(PdfStyles.B3_TABLE_VALUE_SIZE, false, null, "right");
         }
-        renderer.drawTable(summaryData, summaryWidths, shStyles, sdStyles, 1);
+        renderer.drawTableFixedWidth(summaryData, summaryWidths, shStyles, sdStyles, 1);
     }
 
     private PdfTableRenderer.CellStyle createStyle(float fontSize, boolean bold,

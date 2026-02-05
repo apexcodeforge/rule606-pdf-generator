@@ -58,6 +58,8 @@ public class PdfStyles {
     public static final float B3_TABLE_VALUE_SIZE = 4;
     public static final float B3_TABLE_NAME_VALUE_SIZE = 4;
     public static final float B3_DETAIL_VENUE_COL_WIDTH = 40;
+    public static final float B3_SUMMARY_COL_WIDTH = 140;
+    public static final float B3_IOI_VENUE_COL_WIDTH = 140;
 
     // Cell padding
     public static final float CELL_PADDING = 2;
